@@ -1,0 +1,7 @@
+flask
+opencv-python
+scikit-learn
+numpy
+tensorflow
+silence_tensorflow
+IPython

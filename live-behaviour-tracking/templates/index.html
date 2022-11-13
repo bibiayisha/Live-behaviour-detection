@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Behaviour Tracking</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+
+    <style>
+        body {
+            background: url("{{url_for('static', filename='images/new-bg-img.jpg')}}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="title-div">
+        <h1 class="title">Live Behavior Detection</h1>
+    </div>
+    <div class="btns">
+        <button id="start-video-btn">Start</button>
+        <button id="stop-video-btn">Stop</button>
+    </div>
+
+    <div class="main-div">
+        <div class="members">
+            <h2>Project Members</h2>
+            <h3>Mubashir</h3>
+            <h3>Ahmed</h3>
+        </div>
+        <div class="frames-div">
+            <img src="{{url_for('video')}}" width="90%" />
+        </div>
+        <div>
+            <p id="results"></p>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            // handle prediction text update
+            window.setInterval(function() {
+                $.ajax({
+                    url: "/result",
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        console.log('[#results][ajax][success][data]', data);
+                        $('#results').html(data['prediction']);
+                    }
+                });
+            }, 1000)
+
+            // handle start button click
+            $('#start-video-btn').on('click', () => {
+                $.ajax({
+                    url: "/start_video",
+                    type: "GET",
+                    dataType: "json"
+                });
+            });
+
+            // handle stop button click
+            $('#stop-video-btn').on('click', () => {
+                $.ajax({
+                    url: "/stop_video",
+                    type: "GET",
+                    dataType: "json"
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

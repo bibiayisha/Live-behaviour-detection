@@ -1,0 +1,101 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.title-div {
+    background-color: rgb(255, 255, 255, 0.6);
+    width: 75%;
+    margin: auto;
+    border-radius: 5px;
+}
+
+h1 {
+    color: red;
+    font-size: 60px;
+    margin: 40px auto;
+    /* margin-bottom: 50px; */
+    text-align: center;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(30deg, rgb(2, 30, 122), #2c93f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-div {
+    margin: 20px 22px;
+    display: grid;
+    grid-template-columns: 20% 50% 20%;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.members {
+    text-align: center;
+    margin: auto;
+}
+
+.members>h2 {
+    text-align: left;
+    font-size: 40px;
+    color: #000000;
+    padding-bottom: 40px;
+}
+
+.members>h3 {
+    text-align: left;
+    padding-top: 20px;
+    font-size: 30px;
+    color: #000000;
+}
+
+.frames-div {
+    margin: 20px;
+    text-align: center;
+}
+
+.frames-div>img {
+    border: 5px solid rgb(44, 44, 44);
+    border-radius: 10px;
+}
+
+.results>img {
+    border-radius: 50%;
+}
+
+.btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btns>button {
+    text-align: center;
+    padding: 10px 40px;
+    background-color: rgb(0, 93, 168);
+    color: #ffffff;
+    border: 1px solid rgb(0, 93, 168);
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#results {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 700;
+
+}
+button#start-video-btn:hover{
+    background-color: green;
+    border: green;
+}
+button#stop-video-btn:hover{
+    background-color: red;
+    border: red;
+}
