@@ -1,7 +1,0 @@
-flask
-opencv-python
-sklearn
-numpy
-tensorflow
-silence_tensorflow
-IPython
